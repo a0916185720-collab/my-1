@@ -5,42 +5,28 @@ import './App.css'
 import Layout from './components/Layout'
 
 function App() {
+
+  const calclist = [
+    "%", "CE", "C", "X",
+    "1/x", "x2", "2/x", "/",
+    "7", "8", "9", "*",
+    "4", "5", "6", "-",
+    "1", "2", "3", "+",
+    "+/-", "0", "-", "=",
+];
+
   const [count, setCount] = useState(0)
 
   return (
+
     <Layout>
 
       <div className="grid grid-cols-4 gap-4">
-
-        <div className="hover:bg-gray-200">%</div>
-        <div className="hover:bg-gray-200">CE</div>
-        <div className="hover:bg-gray-200">C</div>
-        <div className="hover:bg-gray-200">X</div>
-
-        <div className="hover:bg-gray-200">1/x</div>
-        <div className="hover:bg-gray-200">x2</div>
-        <div className="hover:bg-gray-200">2/x</div>
-        <div className="hover:bg-gray-200">/</div>
-
-        <div className="hover:bg-gray-200">7</div>
-        <div className="hover:bg-gray-200">8</div>
-        <div className="hover:bg-gray-200">9</div>
-        <div className="hover:bg-gray-200">*</div>
-
-        <div className="hover:bg-gray-200">4</div>
-        <div className="hover:bg-gray-200">5</div>
-        <div className="hover:bg-gray-200">6</div>
-        <div className="hover:bg-gray-200">-</div>
-
-        <div className="hover:bg-gray-200">1</div>
-        <div className="hover:bg-gray-200">2</div>
-        <div className="hover:bg-gray-200">3</div>
-        <div className="hover:bg-gray-200">+</div>
-
-        <div className="hover:bg-gray-200">+/-</div>
-        <div className="hover:bg-gray-200">0</div>
-        <div className="hover:bg-gray-200">.</div>
-        <div className="bg-blue-50 hover:bg-gray-200">=</div>
+          {calclist.map((calc, index) => (
+            <div key={index} className="border p-4 text-center hover:bg-gray-200">
+              {calc}  
+            </div>
+          ))}
       </div>
 
     </Layout>
